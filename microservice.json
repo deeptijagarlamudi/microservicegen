@@ -1,0 +1,14 @@
+{
+"microserviceName": "customer-search-service",
+  "folderName": "C:/Users/deept/GenerateMicroServices",
+ "rootPackage": "com.wellsfargo.microservices.customer",
+"templateName" : "restApiCRUDOperations",
+"entityDetails" :
+{
+ "name": "Employee",
+ "dataTypes" :{
+   "String" : "employeeName",
+   "long" : "employeeId"
+ }
+} 
+}
