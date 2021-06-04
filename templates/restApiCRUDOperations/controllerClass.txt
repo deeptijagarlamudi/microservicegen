@@ -1,4 +1,4 @@
-package ${rootPackage};
+package ${rootPackage}.controllers;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,33 +29,33 @@ public class ${entityName}Controller {
 	}
 
 	@GetMapping("/${entityNameinSmallCase}s/{id}")
-	public ResponseEntity<${entityName}> retrieveEmployee(@PathVariable long id) {
+	public ResponseEntity<${entityName}> retrieve${entityName}(@PathVariable long id) {
 		Optional<${entityName}> ${entityNameinSmallCase} = ${entityNameinSmallCase}Repository.findById(id);
 		return ResponseEntity.ok(${entityNameinSmallCase}.get());
 	}
 
-	@DeleteMapping("/employees/{id}")
-	public void deleteEmployee(@PathVariable long id) {
-		employeeRepository.deleteById(id);
+	@DeleteMapping("/${entityNameinSmallCase}s/{id}")
+	public void delete${entityName}(@PathVariable long id) {
+		${entityNameinSmallCase}Repository.deleteById(id);
 	}
 
-	@PostMapping("/employees")
-	public ResponseEntity<Employee> createEmployee(@RequestBody Employee Employee) {
-		Employee savedEmployee = employeeRepository.save(Employee);
-		return ResponseEntity.ok(savedEmployee);
+	@PostMapping("/${entityNameinSmallCase}s")
+	public ResponseEntity<${entityName}> create${entityName}(@RequestBody ${entityName} ${entityNameinSmallCase}) {
+		${entityName} saved${entityName} = ${entityNameinSmallCase}Repository.save(${entityNameinSmallCase});
+		return ResponseEntity.ok(saved${entityName});
 
 	}
 
-	@PutMapping("/employees/{id}")
-	public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee, @PathVariable long id) {
+	@PutMapping("/${entityNameinSmallCase}s/{id}")
+	public ResponseEntity<${entityName}> update${entityName}(@RequestBody ${entityName}  ${entityNameinSmallCase}, @PathVariable long id) {
 
-		Optional<Employee> employeeOptional = employeeRepository.findById(id);
+		Optional<${entityName}> ${entityNameinSmallCase}Optional = ${entityNameinSmallCase}Repository.findById(id);
 
-		if (!employeeOptional.isPresent())
+		if (!${entityNameinSmallCase}Optional.isPresent())
 			return ResponseEntity.notFound().build();
 
-		employee.setEmployeeId(id);
-		Employee savedEmployee = employeeRepository.save(employee);
-		return ResponseEntity.ok(savedEmployee);
+		${entityNameinSmallCase}.set${entityName}Id(id);
+		${entityName} save${entityName} = ${entityNameinSmallCase}Repository.save(${entityNameinSmallCase});
+		return ResponseEntity.ok(saved${entityName});
 	}
 }
