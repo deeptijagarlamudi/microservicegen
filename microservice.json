@@ -1,14 +1,20 @@
 {
-"microserviceName": "customer-search-service",
-  "folderName": "C:/Users/deept/GenerateMicroServices",
- "rootPackage": "com.wellsfargo.microservices.customer",
-"templateName" : "restApiCRUDOperations",
-"entityDetails" :
-{
- "name": "Employee",
- "dataTypes" :{
-   "String" : "employeeName",
-   "long" : "employeeId"
- }
-} 
+	"microserviceName": "customer-search-service",
+	"folderName": "C:/Users/deept/GenerateMicroServices",
+	"rootPackage": "com.wellsfargo.microservices.customer",
+	"templateName": "restApiCRUDOperations",
+	"entityDetails": {
+		"name": "Customer",
+		"attributes": {
+			"customerName": {
+				"dbType": "VARCHAR",
+				"dbTypeLength": "50",
+				"javaType": "String"
+			},
+			"customerId": {
+				"dbType": "INT",
+				"javaType": "Long"
+			}
+		}
+	}
 }
