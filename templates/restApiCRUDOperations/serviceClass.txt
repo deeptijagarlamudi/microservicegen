@@ -1,0 +1,27 @@
+package  ${rootPackage}.services;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ${rootPackage}.${entityName};
+import ${rootPackage}.repositories.${entityName}Repository;
+
+@Service
+public class ${entityName}Service {
+
+	@Autowired
+	${entityName}Repository ${entityNameinSmallCase}Repository;
+
+
+	public ${entityName} insert${entityName}(${entityName} e) {
+		return ${entityNameinSmallCase}Repository.save(e);
+
+	}
+
+	public Optional<${entityName}> get${entityName}(Long id) {
+		return Repository.findById(id);
+	}
+
+}
